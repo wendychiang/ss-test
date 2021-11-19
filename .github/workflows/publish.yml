@@ -24,7 +24,7 @@ jobs:
         poetry publish --build -r test-pypi
       env:
         TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-  - name: Publish with Poetry
+   - name: Publish with Poetry
       run: |
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry publish --build
