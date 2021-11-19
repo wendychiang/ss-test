@@ -29,4 +29,4 @@ jobs:
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry publish --build
       env:
-        TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
