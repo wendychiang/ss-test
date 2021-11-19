@@ -19,7 +19,8 @@ jobs:
         pip install --upgrade poetry
     - name: Package and publish with Poetry
       run: |
-        poetry config pypi-token.pypi $TEST_PYPI_TOKEN
+        poetry config repositories.test-pypi https://test.pypi.org/legacy/
+        poetry config pypi-token.test-pypi $TEST_PYPI_TOKEN
         poetry publish --build
       env:
         TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
