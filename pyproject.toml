@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ss-test"
-version = "0.0.1a3"
+version = "0.0.1a4"
 description = "A python module just to test publish"
 authors = []
 include = ["README.md"]
