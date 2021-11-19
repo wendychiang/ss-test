@@ -7,6 +7,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
+      PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
     steps:
     - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
     - name: Set up Python 3.7
@@ -26,6 +29,3 @@ jobs:
       run: |
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry publish --build
-      env:
-        TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
