@@ -27,5 +27,6 @@ jobs:
         poetry publish --build -r test-pypi
     - name: Publish with Poetry
       run: |
+        poetry config repositories.pypi "https://pypi.org/legacy/"
         poetry config pypi-token.pypi $PYPI_TOKEN
         poetry publish --build
